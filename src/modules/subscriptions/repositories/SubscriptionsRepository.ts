@@ -34,7 +34,7 @@ class SubscriptionsRepository implements ISubscriptionsRepository{
             state
         })
 
-        this.repository.save(subscription)
+        await this.repository.save(subscription)
 
         return subscription
     }
@@ -53,7 +53,7 @@ class SubscriptionsRepository implements ISubscriptionsRepository{
     }
 
     async confirmSubscription({ id, state }: IUpdateSubscriptionsDTO): Promise<void> {
-        await this.repository.query(`UPDATE subscriptions SET state='${state}' WHERE id='${id}'`)
+        return await this.repository.query(`UPDATE subscriptions SET state='${state}' WHERE id='${id}'`)
     }
 
 }

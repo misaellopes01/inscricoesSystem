@@ -13,9 +13,7 @@ class ConfirmSubscriptionUseCase{
 
     async execute(id: string){
 
-        await this.subscriptionsRepository.confirmSubscription({id, state: OperationType.COMPLETED})
-
-        return 
+        return await this.subscriptionsRepository.confirmSubscription({id, state: OperationType.COMPLETED})
     }
 }
 

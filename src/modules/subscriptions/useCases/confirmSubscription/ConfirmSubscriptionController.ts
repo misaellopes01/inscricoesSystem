@@ -13,7 +13,7 @@ class ConfirmSubscriptionController {
 
         await confirmSubscriptionUseCase.execute(id)
 
-        return response.status(201)
+        return response.status(201).send()
     }
 }
 
